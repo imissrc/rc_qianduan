@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>注册账号</title>
+    {% load staticfiles %}
+    <img src="../static/image/4.jpg" alt="My image"/>
+    <link rel="stylesheet" type="text/css" href="../static/style/register.css" />
+
+</head>
+
+<body>
+    <div id="registerscreen">
+        <form method="post" action="/register/" class="form">
+            {% if messages %}
+                 <script>
+                    {% for msg in messages %}
+                        alert('{{ msg.message }}');
+                    {% endfor %}
+                </script>
+            {% endif %}
+
+            {% csrf_token %}
+            <h3 style="color:black;">注册账号</h3>
+            <!-- label使得用户点击文本也能触发相应的控件 -->
+            <!--<p><label class="userinput">用户名</label><input type="text" id="username" class="text_field" /></p>-->
+            <p><label class="userinput">用户名</label><input type="text" id="username" class="text_field" name="username" /></p>
+            <p><label class="userinput">密码</label><input type="password" id="password" class="text_field" name="password"/></p>
+            <div id="login_control">
+                <input type="submit" id="btn_login" value="注册" />
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

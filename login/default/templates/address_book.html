@@ -1,0 +1,71 @@
+<!-- 代码已经实现了在添加和删除单元格时信息永远居中。还未实现添加和删除操作 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>通讯录</title>
+    <img src="../static/image/1.jpg" alt="My image"/>
+    <link rel="stylesheet" type="text/css" href="../static/style/address_book.css" />
+</head>
+
+<body>
+    <!-- 通讯录列表页面：一个通讯录表格，有添加、编辑、删除按钮 -->
+    <div id="book">
+        <table>
+            <thead>
+                 <tr>
+                     <th>序号</th>
+                     <th>姓名</th>
+                     <th>电话</th>
+                     <th>邮箱</th>
+                     <th>住址</th>
+                     <th>QQ号</th>
+                     <th>编辑</th>
+                     <th>删除</th>
+                 </tr>
+            </thead>
+            <tbody>
+                <tr>
+                {% for info in user_info %}
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ info.name }}</td>
+                    <td> {{ info.telnum }}</td>
+                    <td> {{ info.mailnum }}</td>
+                    <td> {{ info.address }}</td>
+                    <td> {{ info.qqnum}}</td>
+                    <td><a type="button" class="edit" href="/updateinfo/{{ info.id }}" >编辑</a></td>
+                    <td><a type="button" class="del" href="/del/{{ info.id }} ">删除</a></td>
+                </tr>
+                {% endfor %}
+            <!--<tr>-->
+                <!--<td>小明</td>-->
+                <!--<td>1234456789</td>-->
+                <!--<td>123456789@qq.com</td>-->
+                <!--<td>北京邮电大学</td>-->
+                <!--<td>123456789</td>-->
+                <!--<td><a>编辑</a></td>-->
+                <!--<td><a href='javascript:;' onclick='del(this)' >删除</a></td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>小明</td>-->
+                <!--<td>1234456789</td>-->
+                <!--<td>123456789@qq.com</td>-->
+                <!--<td>北京邮电大学</td>-->
+                <!--<td>123456789</td>-->
+                <!--<td><a>编辑</a></td>-->
+                <!--<td><a href='javascript:;' onclick='del(this)' >删除</a></td>-->
+            <!--</tr>-->
+
+            </tbody>
+        </table>
+        <form action="/add_contactpeo/" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn" id="btn_add" >添加</button>
+            <button type="reset" class="btn" id="btn_cancel" onclick="location.href='/address_book/'">取消</button>
+        </form>
+
+    </div>
+</body>
+
+</html>

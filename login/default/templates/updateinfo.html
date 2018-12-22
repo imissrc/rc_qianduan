@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>更新通讯录</title>
+    {% load staticfiles %}
+    <img src="../static/image/1.jpg" alt="My image"/>
+    <link rel="stylesheet" type="text/css" href="../static/style/updateinfo.css" />
+</head>
+
+<body>
+    <!-- 添加新的联系人页面：姓名、电话、邮箱、住址、QQ号 -->
+    <div id="updateperson">
+        <h3 style="color:black;">更新联系人</h3>
+        <form method="post" action="/updateinfo/{{infoid}}" id="form">
+            {% csrf_token %}
+            <p><label class="label_input">姓名</label><input type="text" name="name" class="text_field" class="req"/></p>
+            <p><label class="label_input">电话</label><input type="text" name="telnum" class="text_field" class="req"/></p>
+            <p><label class="label_input">邮箱</label><input type="text" name="mailnum" class="text_field" /></p>
+            <p><label class="label_input">住址</label><input type="text" name="address" class="text_field" /></p>
+            <p><label class="label_input">QQ号</label><input type="text" name="qqnum" class="text_field" /></p>
+            <div id="updatemes">
+                <input type="submit" id="btn_update" value="更新"/>
+            </div>
+            <form>
+    </div> 
+</body>
+
+</html>

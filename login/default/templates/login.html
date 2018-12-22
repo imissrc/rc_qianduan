@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>登录页面</title>
+    {% load staticfiles %}
+    <img src="../static/image/4.jpg" alt="My image"/>
+    <link rel="stylesheet" type="text/css" href="../static/style/login.css" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script type="text/javascript" src="../static/javascript/login.js"></script>
+
+</head>
+
+<body>
+    <div classs='bg'>
+        <div id="loginscreen">
+        <form method="post" class="form" action="/">
+            {% if messages %}
+                 <script>
+                    {% for msg in messages %}
+                        alert('{{ msg.message }}');
+                    {% endfor %}
+                </script>
+            {% endif %}
+
+            {% csrf_token %}
+            <h3 style="color:black;">欢迎登陆</h3>
+            <!-- label使得用户点击文本也能触发相应的控件 -->
+            <p><label class="userinput">用户名</label><input type="text" id="username" class="text_field" name="username"/></p>
+            <p><label class="userinput">密码</label><input type="password" id="password" class="text_field" name="password"/></p>
+            <div id="login_control">
+                <a id="forget_password" href="login.html">忘记密码？</a>
+                <!-- 忘记密码找回功能未实现 -->
+                <input type="submit" id="btn_login" value="立即登录"/>
+                <a id="reg" href="/register/">还没有账号，注册</a>
+            </div>
+            </form>
+    </div>
+    </div>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+body{
+	 background-image: url("1.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+table{
+	border-collapse: collapse;
+}
+
+table,
+td,
+th
+{
+	border: 1px solid black;
+	text-align: center;
+	padding: 5px;
+	margin:20px;
+	width:auto;
+}
+.btn{
+	background-color: #8efc55;
+}
+.btn:hover{
+	background-color: #38B1A8;
+}
+
+#book{
+	padding:5px;
+	left:50%;
+	top:50%;
+	width:auto;
+
+	background-color:rgba(240, 255, 255, 0.5);
+	position:absolute;
+
+	border-radius: 10px;
+	text-align: center;
+	display: inline-block !important;
+	transform:translate(-50%,-50%);
+
+}
