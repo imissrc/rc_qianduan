@@ -5,7 +5,6 @@
 <head>
     <meta charset="UTF-8">
     <title>通讯录</title>
-    <img src="../static/image/1.jpg" alt="My image"/>
     <link rel="stylesheet" type="text/css" href="../static/style/address_book.css" />
 </head>
 
@@ -35,7 +34,7 @@
                     <td> {{ info.address }}</td>
                     <td> {{ info.qqnum}}</td>
                     <td><a type="button" class="edit" href="/updateinfo/{{ info.id }}" >编辑</a></td>
-                    <td><a type="button" class="del" href="/del/{{ info.id }} ">删除</a></td>
+                    <td><a type="button" class="del" href="/delinfo/{{ info.id }} ">删除</a></td>
                 </tr>
                 {% endfor %}
             <!--<tr>-->
@@ -62,7 +61,8 @@
         <form action="/add_contactpeo/" method="POST">
             {% csrf_token %}
             <button type="submit" class="btn" id="btn_add" >添加</button>
-            <button type="reset" class="btn" id="btn_cancel" onclick="location.href='/address_book/'">取消</button>
+            <a href="/logout/"><input type="button" value="登出" class="btn" ></a>
+
         </form>
 
     </div>

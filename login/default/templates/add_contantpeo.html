@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <title>通讯录</title>
     {% load staticfiles %}
-    <img src="../static/image/1.jpg" alt="My image"/>
     <link rel="stylesheet" type="text/css" href="../static/style/add_contantpeo.css" />
+     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
 
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="text/javascript" src="../static/javascript/add_contantpeo.js"></script>
+
 </head>
 
 <body>
@@ -23,10 +25,11 @@
             <p><label class="label_input">邮箱</label><input type="text" name="mailnum" class="text_field" /></p>
             <p><label class="label_input">住址</label><input type="text" name="address" class="text_field" /></p>
             <p><label class="label_input">QQ号</label><input type="text" name="qqnum" class="text_field" /></p>
-            <div id="savemes">
-                <input type="submit" id="btn_save" value="保存"/>
-            </div>
-            <form>
+
+            <input type="submit" id="btn_save" class="btn" value="保存"/>
+            <input type="reset" id="btn_cancel" class="btn" onclick="location.href='/address_book/'" value="取消"/>
+
+        </form>
     </div> 
 </body>
 

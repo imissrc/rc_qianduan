@@ -9,5 +9,6 @@ urlpatterns = [
     path("add_contactpeo/",views.add_contactpeo),
     path("saveinfo/",views.saveinfo),
     path("updateinfo/<int:infoid>",views.updateinfo),
-    # path("delinfo/<int:infoid>",views.delinfo),
+    path("delinfo/<int:infoid>",views.delinfo),
+    path("logout/",views.logout),
 ]

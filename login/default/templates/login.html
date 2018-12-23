@@ -5,7 +5,6 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <title>登录页面</title>
     {% load staticfiles %}
-    <img src="../static/image/4.jpg" alt="My image"/>
     <link rel="stylesheet" type="text/css" href="../static/style/login.css" />
     <script src="http://code.jquery.com/jquery-latest.js"></script>
         <script type="text/javascript" src="../static/javascript/login.js"></script>
@@ -13,8 +12,8 @@
 </head>
 
 <body>
-    <div classs='bg'>
-        <div id="loginscreen">
+    <p>用户1:user_one 密码：123456    也可以自己注册创建一个新用户</p>
+    <div id="loginscreen">
         <form method="post" class="form" action="/">
             {% if messages %}
                  <script>
@@ -37,9 +36,7 @@
             </div>
             </form>
     </div>
-    </div>
 
-    
 </body>
 
 </html>

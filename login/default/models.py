@@ -10,11 +10,11 @@ class User(models.Model):
 
 class User_Info(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    name=models.CharField(max_length=4,default='csefewf')
-    qqnum=models.CharField(max_length=12,default='1345215')
-    telnum=models.CharField(max_length=11,default='41414141')
-    mailnum=models.EmailField(max_length=20,default='dfdg@gmail.com')
-    address=models.CharField(max_length=20,default='defw4344rt')
+    name=models.CharField(max_length=4)
+    qqnum=models.CharField(max_length=12)
+    telnum=models.CharField(max_length=11)
+    mailnum=models.EmailField(max_length=20)
+    address=models.CharField(max_length=20)
 
     def __str__(self):
         return self.name

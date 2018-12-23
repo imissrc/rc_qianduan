@@ -5,8 +5,12 @@
     <meta charset="UTF-8">
     <title>更新通讯录</title>
     {% load staticfiles %}
-    <img src="../static/image/1.jpg" alt="My image"/>
     <link rel="stylesheet" type="text/css" href="../static/style/updateinfo.css" />
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="shttp://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <script type="text/javascript" src="../static/javascript/add_contantpeo.js"></script>
 </head>
 
 <body>
@@ -15,15 +19,16 @@
         <h3 style="color:black;">更新联系人</h3>
         <form method="post" action="/updateinfo/{{infoid}}" id="form">
             {% csrf_token %}
-            <p><label class="label_input">姓名</label><input type="text" name="name" class="text_field" class="req"/></p>
-            <p><label class="label_input">电话</label><input type="text" name="telnum" class="text_field" class="req"/></p>
-            <p><label class="label_input">邮箱</label><input type="text" name="mailnum" class="text_field" /></p>
-            <p><label class="label_input">住址</label><input type="text" name="address" class="text_field" /></p>
-            <p><label class="label_input">QQ号</label><input type="text" name="qqnum" class="text_field" /></p>
-            <div id="updatemes">
-                <input type="submit" id="btn_update" value="更新"/>
-            </div>
-            <form>
+            <p><label class="label_input">姓名</label><input type="text" name="name" class="text_field" class="req" value="{{ user_info.name }}"/></p>
+            <p><label class="label_input">电话</label><input type="text" name="telnum" class="text_field " class="req" value="{{ user_info.telnum }}"/></p>
+            <p><label class="label_input">邮箱</label><input type="text" name="mailnum" class="text_field" value="{{ user_info.mailnum }}"/></p>
+            <p><label class="label_input">住址</label><input type="text" name="address" class="text_field" value="{{ user_info.address }}"/></p>
+            <p><label class="label_input">QQ号</label><input type="text" name="qqnum" class="text_field" value="{{ user_info.qqnum }}"/></p>
+
+            <input type="submit" id="btn_update" class="btn" value="更新"/>
+            <input type="submit" id="btn_cancel" class="btn" value="取消" onclick="location.href='/address_book/'"/>
+
+        </form>
     </div> 
 </body>
 

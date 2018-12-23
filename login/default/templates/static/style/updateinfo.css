@@ -1,11 +1,7 @@
 body {
-    background-image:url("1.jpg");
+    background-image:url(../image/1.jpg);
     background-size:100%;
     background-repeat:no-repeat;
-    top:-100px;
-    left:0;
-    right: 0;
-    position:fixed;
 }
 
 #updateperson {
@@ -30,11 +26,11 @@ body {
     background:none;
 }
 
-#updatemes{
-    left:185px;
-    width:30px;
-    height:20px;
-    position:relative;
+.btn{
+	background-color: #8efc55;
+}
+.btn:hover{
+	background-color: #38B1A8;
 }
 h3{
     color:red;
