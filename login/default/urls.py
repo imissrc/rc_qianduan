@@ -11,4 +11,5 @@ urlpatterns = [
     path("updateinfo/<int:infoid>",views.updateinfo),
     path("delinfo/<int:infoid>",views.delinfo),
     path("logout/",views.logout),
+    path("search/",views.search),
 ]

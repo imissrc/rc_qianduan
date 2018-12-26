@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>通讯录</title>
+    <title>已查找到的联系人</title>
     <link rel="stylesheet" type="text/css" href="../static/style/address_book.css" />
 </head>
 
@@ -14,7 +14,6 @@
         <table>
             <thead>
                  <tr>
-                     <th>序号</th>
                      <th>姓名</th>
                      <th>电话</th>
                      <th>邮箱</th>
@@ -27,7 +26,6 @@
             <tbody>
                 <tr>
                 {% for info in user_info %}
-                    <td>{{ forloop.counter }}</td>
                     <td>{{ info.name }}</td>
                     <td> {{ info.telnum }}</td>
                     <td> {{ info.mailnum }}</td>
@@ -37,15 +35,10 @@
                     <td><a type="button" class="del" href="/delinfo/{{ info.id }} ">删除</a></td>
                 </tr>
                 {% endfor %}
+
             </tbody>
         </table>
-        <form action="/add_contactpeo/" method="POST">
-            {% csrf_token %}
-            <button type="submit" class="btn" id="btn_add" >添加</button>
-            <a href="/logout/"><input type="button" value="登出" class="btn" ></a>
-            <a href="/search/"><input type="button" value="查找" class="btn" ></a>
-        </form>
-
+        <a href="/search/"><input type="button" value="返回" class="btn" ></a>
     </div>
 </body>
 

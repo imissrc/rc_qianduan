@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
 }
 
-#registerscreen {
+#searchscreen {
     width: 400px;
     height: 260px;
     padding: 13px;
@@ -29,7 +29,7 @@ form p>* {
 .userinput {
     font-size: 14px;
     font-family: 宋体;
-
+    margin_top:10px;
     width: 65px;
     height: 28px;
     line-height: 28px;
@@ -49,12 +49,12 @@ form p>* {
     border: 0;
 }
 
-#btn_login {
-    margin-top: 5px;
+.btn {
+    margin-top: 10px;
     font-size: 14px;
     font-family: 宋体;
 
-    width: 343px;
+    width: 80px;
     height: 28px;
     line-height: 28px;
     text-align: center;
@@ -62,18 +62,19 @@ form p>* {
     color: black;
     background-color: #39abea;
     border-radius: 6px;
-    border: 0;
-
-    float: left;
 }
 
-#btn_login:hover {
+.btn:hover {
     border: 1px solid blue;
 }
-#login_control {
-    padding: 0 28px;
+#btn_search{
+    margin-left: 40px;
+    margin-top: 30px;
 }
-
+#btn_return{
+    margin-left: 20px;
+    margin-top: 30px;
+}
 .high {
     color: red;
     font-size:20px;
@@ -89,4 +90,7 @@ form p>* {
 
 .onSuccess {
     color: green;
+}
+h3{
+    margin-top:50px;
 }

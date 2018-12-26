@@ -125,3 +125,38 @@ def delinfo(request,infoid):
     models.User_Info.objects.get(id=infoid).delete()
     return HttpResponseRedirect("/address_book/")
 
+def search(request):
+    if request.method =='GET':
+        return render(request,'search.html')
+    elif request.method=='POST':
+        try:
+            user_info=models.User_Info.objects.filter(name=request.POST['name'],user_id=request.session['user_id'])
+            
+            return render(request,'hasfind.html',{'user_info':user_info})
+        except KeyError:
+            messages.error(request,'找不到该联系人')
+            return HttpResponseRedirect("/search/")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
